@@ -56,36 +56,43 @@ public class TelaPadrao extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jButtonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/excluir.png"))); // NOI18N
+        jButtonExcluir.setMnemonic('E');
         jButtonExcluir.setText("Excluir");
         jButtonExcluir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonExcluir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/adicionar.png"))); // NOI18N
+        jButtonNovo.setMnemonic('N');
         jButtonNovo.setText("Novo");
         jButtonNovo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonNovo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jButtonRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/relatorio.png"))); // NOI18N
+        jButtonRelatorio.setMnemonic('I');
         jButtonRelatorio.setText("Imprimir");
         jButtonRelatorio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonRelatorio.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jButtonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/editar.png"))); // NOI18N
+        jButtonEditar.setMnemonic('D');
         jButtonEditar.setText("Editar");
         jButtonEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jButtonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/salvar.png"))); // NOI18N
+        jButtonSalvar.setMnemonic('A');
         jButtonSalvar.setText("Salvar");
         jButtonSalvar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonSalvar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/sair.png"))); // NOI18N
+        jButtonSair.setMnemonic('S');
         jButtonSair.setText("Sair");
         jButtonSair.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonSair.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jButtonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/pesquisar2.png"))); // NOI18N
+        jButtonPesquisar.setMnemonic('P');
         jButtonPesquisar.setText("Pesquisar");
         jButtonPesquisar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonPesquisar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);

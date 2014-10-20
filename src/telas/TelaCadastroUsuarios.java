@@ -104,6 +104,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/cancelar.png"))); // NOI18N
+        jButtonCancelar.setMnemonic('C');
         jButtonCancelar.setText("Cancelar");
         jButtonCancelar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonCancelar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -114,6 +115,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         });
 
         jButtonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/salvar.png"))); // NOI18N
+        jButtonSalvar.setMnemonic('A');
         jButtonSalvar.setText("Salvar");
         jButtonSalvar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonSalvar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -124,6 +126,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         });
 
         jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/sair.png"))); // NOI18N
+        jButtonSair.setMnemonic('S');
         jButtonSair.setText("Sair");
         jButtonSair.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonSair.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -134,6 +137,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         });
 
         jButtonSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/senha.png"))); // NOI18N
+        jButtonSenha.setMnemonic('L');
         jButtonSenha.setText("Alterar");
         jButtonSenha.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonSenha.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
