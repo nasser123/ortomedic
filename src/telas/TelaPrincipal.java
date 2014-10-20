@@ -141,6 +141,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButtonUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/usuario_adiciona.png"))); // NOI18N
         jButtonUsuarios.setText("Usuarios");
         jButtonUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,7 +185,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButtonConvenios)
                     .addComponent(jButtonUsuarios)
                     .addComponent(jButtonPacientes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 295, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 277, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
