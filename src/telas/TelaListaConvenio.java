@@ -7,13 +7,11 @@ package telas;
 
 import dao.ConvenioDAO;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.RollbackException;
 import javax.swing.JOptionPane;
 import model.Convenio;
+import relatorios.ExecutaRelatorio;
 import utilidades.ConfigTelas;
 import utilidades.ConnectionFactory;
 
@@ -110,6 +108,11 @@ public class TelaListaConvenio extends javax.swing.JFrame {
         jButtonRelatorio.setText("Imprimir");
         jButtonRelatorio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonRelatorio.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonRelatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRelatorioActionPerformed(evt);
+            }
+        });
 
         jButtonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/editar.png"))); // NOI18N
         jButtonEditar.setMnemonic('D');
@@ -353,6 +356,12 @@ public class TelaListaConvenio extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButtonSairActionPerformed
 
+    private void jButtonRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRelatorioActionPerformed
+        ExecutaRelatorio er = new ExecutaRelatorio();
+        er.abrirRelatorio("testeRelatorio2.jasper", "Teste de titulo");
+        
+    }//GEN-LAST:event_jButtonRelatorioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -382,6 +391,7 @@ public class TelaListaConvenio extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new TelaListaConvenio().setVisible(true);
             }

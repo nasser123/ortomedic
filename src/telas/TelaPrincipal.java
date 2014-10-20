@@ -46,6 +46,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButtonPesquisar = new javax.swing.JButton();
         jButtonConvenios = new javax.swing.JButton();
         jButtonUsuarios = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,6 +148,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Pacientes");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -159,9 +167,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(140, 140, 140)
-                .addComponent(jButtonConvenios)
-                .addGap(51, 51, 51)
-                .addComponent(jButtonUsuarios)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButtonConvenios)
+                        .addGap(51, 51, 51)
+                        .addComponent(jButtonUsuarios)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -173,7 +184,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonConvenios)
                     .addComponent(jButtonUsuarios))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 295, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -200,6 +213,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jButtonConveniosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConveniosActionPerformed
         new TelaListaConvenio().setVisible(true);
     }//GEN-LAST:event_jButtonConveniosActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new TelaListaPacientes().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,6 +255,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.persistence.EntityManager entityManager;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonConvenios;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonExcluir;

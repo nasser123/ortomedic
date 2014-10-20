@@ -6,6 +6,8 @@
 
 package model;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -22,6 +24,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -38,6 +41,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Consulta.findByHoraConsulta", query = "SELECT c FROM Consulta c WHERE c.horaConsulta = :horaConsulta"),
     @NamedQuery(name = "Consulta.findByCompareceu", query = "SELECT c FROM Consulta c WHERE c.compareceu = :compareceu")})
 public class Consulta implements Serializable {
+    @Transient
+    private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -83,7 +88,9 @@ public class Consulta implements Serializable {
     }
 
     public void setIdconsulta(Integer idconsulta) {
+        Integer oldIdconsulta = this.idconsulta;
         this.idconsulta = idconsulta;
+        changeSupport.firePropertyChange("idconsulta", oldIdconsulta, idconsulta);
     }
 
     public Date getDataConsulta() {
@@ -91,7 +98,9 @@ public class Consulta implements Serializable {
     }
 
     public void setDataConsulta(Date dataConsulta) {
+        Date oldDataConsulta = this.dataConsulta;
         this.dataConsulta = dataConsulta;
+        changeSupport.firePropertyChange("dataConsulta", oldDataConsulta, dataConsulta);
     }
 
     public String getSintomas() {
@@ -99,7 +108,9 @@ public class Consulta implements Serializable {
     }
 
     public void setSintomas(String sintomas) {
+        String oldSintomas = this.sintomas;
         this.sintomas = sintomas;
+        changeSupport.firePropertyChange("sintomas", oldSintomas, sintomas);
     }
 
     public String getExames() {
@@ -107,7 +118,9 @@ public class Consulta implements Serializable {
     }
 
     public void setExames(String exames) {
+        String oldExames = this.exames;
         this.exames = exames;
+        changeSupport.firePropertyChange("exames", oldExames, exames);
     }
 
     public Date getHoraConsulta() {
@@ -115,7 +128,9 @@ public class Consulta implements Serializable {
     }
 
     public void setHoraConsulta(Date horaConsulta) {
+        Date oldHoraConsulta = this.horaConsulta;
         this.horaConsulta = horaConsulta;
+        changeSupport.firePropertyChange("horaConsulta", oldHoraConsulta, horaConsulta);
     }
 
     public Boolean getCompareceu() {
@@ -123,7 +138,9 @@ public class Consulta implements Serializable {
     }
 
     public void setCompareceu(Boolean compareceu) {
+        Boolean oldCompareceu = this.compareceu;
         this.compareceu = compareceu;
+        changeSupport.firePropertyChange("compareceu", oldCompareceu, compareceu);
     }
 
     public String getReceita() {
@@ -131,7 +148,9 @@ public class Consulta implements Serializable {
     }
 
     public void setReceita(String receita) {
+        String oldReceita = this.receita;
         this.receita = receita;
+        changeSupport.firePropertyChange("receita", oldReceita, receita);
     }
 
     public String getMedicacao() {
@@ -139,7 +158,9 @@ public class Consulta implements Serializable {
     }
 
     public void setMedicacao(String medicacao) {
+        String oldMedicacao = this.medicacao;
         this.medicacao = medicacao;
+        changeSupport.firePropertyChange("medicacao", oldMedicacao, medicacao);
     }
 
     public Paciente getIdpaciente() {
@@ -147,7 +168,9 @@ public class Consulta implements Serializable {
     }
 
     public void setIdpaciente(Paciente idpaciente) {
+        Paciente oldIdpaciente = this.idpaciente;
         this.idpaciente = idpaciente;
+        changeSupport.firePropertyChange("idpaciente", oldIdpaciente, idpaciente);
     }
 
     public TipoConsulta getIdtipoConsulta() {
@@ -155,7 +178,9 @@ public class Consulta implements Serializable {
     }
 
     public void setIdtipoConsulta(TipoConsulta idtipoConsulta) {
+        TipoConsulta oldIdtipoConsulta = this.idtipoConsulta;
         this.idtipoConsulta = idtipoConsulta;
+        changeSupport.firePropertyChange("idtipoConsulta", oldIdtipoConsulta, idtipoConsulta);
     }
 
     @Override
@@ -181,6 +206,14 @@ public class Consulta implements Serializable {
     @Override
     public String toString() {
         return "model.Consulta[ idconsulta=" + idconsulta + " ]";
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        changeSupport.addPropertyChangeListener(listener);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        changeSupport.removePropertyChangeListener(listener);
     }
     
 }
