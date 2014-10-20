@@ -19,6 +19,7 @@
 
 package dao;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -28,6 +29,7 @@ import model.Convenio;
 import model.TipoUsuario;
 import model.Usuario;
 import utilidades.ConnectionFactory;
+import utilidades.Senhas;
 
 /**
  *
@@ -124,6 +126,17 @@ public class UsuarioDAO implements IDao {
         return null;
     }
 
+    public Usuario pesquisarPorUsuario(String usuario) throws SQLException {
+        Usuario u = null;
+        List usuarios = entity.createNamedQuery("Usuario.findByUsuario").setParameter("usuario", usuario).getResultList();
+        if (!usuarios.isEmpty()) {
+            u = (Usuario) usuarios.get(0);
+            return u;
+        }
+        JOptionPane.showMessageDialog(null, "Usuário digitado não existe.");
+        return null;
+    }
+
     @Override
     public boolean alterar(Object objeto) throws SQLException {
         if (objeto instanceof Usuario) {
@@ -156,4 +169,14 @@ public class UsuarioDAO implements IDao {
         return null;
     }
 
+    public boolean verificaLogin(String usuario, char[] senha) throws SQLException, NoSuchAlgorithmException {
+        Usuario u = pesquisarPorUsuario(usuario);
+        String s = Senhas.toMD5(senha);
+        if (Senhas.testaSenhasCadastro(s, u.getSenha())) {
+            return true;
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário digitado não existe.");
+            return false;
+        }
+    }
 }

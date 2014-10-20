@@ -133,6 +133,11 @@ public class TelaListaUsuarios extends javax.swing.JFrame {
         jButtonSair.setText("Sair");
         jButtonSair.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonSair.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSairActionPerformed(evt);
+            }
+        });
 
         jButtonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones32/pesquisar2.png"))); // NOI18N
         jButtonPesquisar.setText("Pesquisar");
@@ -389,6 +394,10 @@ public class TelaListaUsuarios extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jButtonEditarActionPerformed
+
+    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButtonSairActionPerformed
 
     /**
      * @param args the command line arguments

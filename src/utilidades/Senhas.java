@@ -22,6 +22,15 @@ public class Senhas {
     
     }
     
+    public static boolean testaSenhasCadastro(String pass1, String pass2){
+        if (pass1.equals(pass2)) {
+            return true;
+        } else {
+            return false;
+        }
+    
+    }
+    
     private static String charToString(char[] senha){
         String s = "";
         for(int i = 0 ; i < senha.length; i++){
