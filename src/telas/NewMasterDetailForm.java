@@ -24,6 +24,7 @@ public class NewMasterDetailForm extends JPanel {
     
     public NewMasterDetailForm() {
         initComponents();
+        System.out.println("teste");
         if (!Beans.isDesignTime()) {
             entityManager.getTransaction().begin();
         }
